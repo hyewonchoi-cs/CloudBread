@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prime-high
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prime-high
+  template:
+    metadata:
+      labels:
+        app: prime-high
+    spec:
+      containers:
+        - name: prime-app
+          image: hakyunghahm/prime-test:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              cpu: "1000m"
+            limits:
+              cpu: "1000m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prime-high-service
+spec:
+  selector:
+    app: prime-high
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30081
