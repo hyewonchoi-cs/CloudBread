@@ -69,17 +69,11 @@ FinOps를 통한 비용 관리, Observability/AIOps 기반 운영, 그리고 하
 | 8주차 | 정리 | Trade-off 분석 및 아키텍처 선택 기준 |
 
 ---
-
 ## 🌿 브랜치 전략
 
 - 개인 작업은 **주차별 브랜치**에서 진행
-- 모든 PR은 `develop` 브랜치로 머지
-- `main`은 최종 정리된 결과만 반영
+- 모든 PR은 `main` 브랜치로 머지
 
 ### 브랜치 네이밍
 - `<githubID>-week-<NN>`
 - 예: `hakyunghahm-week-01`
-
-### 브랜치 구조
-- `main`: 최종 결과
-- `develop`: 진행 중 통합
